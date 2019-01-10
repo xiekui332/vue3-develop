@@ -1,7 +1,11 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
+
+    <!-- footer组件 S -->
     <footerComponent />
+    <!-- footer组件 E -->
+
   </div>
 </template>
 
@@ -15,6 +19,9 @@ export default {
   components: {
     HelloWorld,
     footerComponent
+  },
+  mounted(){
+    document.getElementById('app').style.minHeight = window.innerHeight + 'px';
   }
 }
 </script>
