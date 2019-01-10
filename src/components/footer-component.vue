@@ -97,7 +97,7 @@ export default {
     display: flex;
     flex-direction: column;
     p {
-      color: #666;
+      color: #999;
       font-size: 0.2rem;
       margin-top: 0.05rem;
     }
