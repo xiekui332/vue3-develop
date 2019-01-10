@@ -1,7 +1,7 @@
 <template>
     <div class="footer-component">
         <div class="footer_item" v-for="item,index in footerItem" :key="index">
-            <div class="footer_item_box">
+            <div class="footer_item_box" @click="toDetailPage(item.toDetailPageUrl)">
                 <img :src="item.img" alt="图片">
                 <p :class="{p_active:item.isActive}">{{item.title}}</p>
             </div>
@@ -10,7 +10,7 @@
 </template>
 <script>
 export default {
-  name: "footerComponent",
+  name: "FooterComponent",
   props: {
     obj: String //设置类型
   },
@@ -23,7 +23,8 @@ export default {
               ? require("../assets/images/icon/shyeselect.png")
               : require("../assets/images/icon/shyeunselect.png"),
           title: "首页",
-          isActive: false
+          isActive: false,
+          toDetailPageUrl:'/'
         },
         {
           img:
@@ -31,7 +32,8 @@ export default {
               ? require("../assets/images/icon/dashiselect.png")
               : require("../assets/images/icon/dashiunselect.png"),
           title: "大师讲堂",
-          isActive: false
+          isActive: false,
+          toDetailPageUrl:'/masterClass'
         },
         {
           img:
@@ -39,7 +41,8 @@ export default {
               ? require("../assets/images/icon/qifuselect.png")
               : require("../assets/images/icon/qifuunselect.png"),
           title: "祈福许愿",
-          isActive: false
+          isActive: false,
+          toDetailPageUrl:'/prayForBlessing'
         },
         {
           img:
@@ -47,12 +50,20 @@ export default {
               ? require("../assets/images/icon/gerenselect.png")
               : require("../assets/images/icon/gerenunselect.png"),
           title: "个人中心",
-          isActive: false
+          isActive: false,
+          toDetailPageUrl:'/personalCenter'
         }
       ]
     };
   },
-  methods: {},
+  methods: {
+      //切换footer页面
+      toDetailPage(url){
+          this.$router.push({
+              path:url
+          })
+      }
+  },
   created() {
     // console.log(this.obj)
   }

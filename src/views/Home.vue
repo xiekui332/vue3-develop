@@ -5,7 +5,7 @@
     <!-- <HelloWorld :msg = msg /> -->
     
     <!-- footer组件 S -->
-    <footerComponent ref="footer" :obj = selectPage />
+    <FooterComponent ref="footer" :obj = selectPage />
     <!-- footer组件 E -->
 
   </div>
@@ -14,13 +14,13 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-import footerComponent from '@/components/footer-component.vue'
+import FooterComponent from '@/components/Footer-component.vue'
 
 export default {
   name: 'home',
   components: {
     HelloWorld,
-    footerComponent
+    FooterComponent
   },
   data(){
     return {
