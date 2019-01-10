@@ -13,5 +13,12 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script>
+      if (window.screen.availWidth <= 750) {
+          document.documentElement.style.fontSize = (100 / 750 * window.screen.availWidth) + 'px';
+      } else {
+          document.documentElement.style.fontSize = '100px';
+      }
+    </script>
   </body>
 </html>
