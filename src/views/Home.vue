@@ -2,8 +2,10 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
 
+    <!-- <HelloWorld :msg = msg /> -->
+    
     <!-- footer组件 S -->
-    <footerComponent />
+    <footerComponent ref="footer" :obj = selectPage />
     <!-- footer组件 E -->
 
   </div>
@@ -20,8 +22,15 @@ export default {
     HelloWorld,
     footerComponent
   },
+  data(){
+    return {
+        msg:'233',
+        selectPage:'one'
+    }
+  },
   mounted(){
     document.getElementById('app').style.minHeight = window.innerHeight + 'px';
+    this.$refs.footer.footerItem[0].isActive = true;
   }
 }
 </script>
