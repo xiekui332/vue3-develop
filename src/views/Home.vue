@@ -1,9 +1,15 @@
 <template>
-  <div class="home">
+  <div class="home" id="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
 
     <!-- <HelloWorld :msg = msg /> -->
     
+    <!-- container S -->
+    <div class="page_container">
+
+    </div>
+    <!-- container E -->
+
     <!-- footer组件 S -->
     <FooterComponent ref="footer" :obj = selectPage />
     <!-- footer组件 E -->
@@ -29,8 +35,26 @@ export default {
     }
   },
   mounted(){
-    document.getElementById('app').style.minHeight = window.innerHeight + 'px';
+    document.getElementById('home').style.minHeight = window.innerHeight + 'px';
     this.$refs.footer.footerItem[0].isActive = true;
   }
 }
 </script>
+
+
+
+<style lang="less" scoped>
+
+.home{
+  width: 100%;
+  background: #F9F3ED!important;
+  overflow: hidden;
+  .page_container{
+    width: 7rem;
+    height: 7.4rem;
+    margin: .68rem auto 0; 
+  }
+}
+
+</style>
+

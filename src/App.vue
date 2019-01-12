@@ -1,14 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <!-- <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> -->
-    </div>
+    <!-- <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div> -->
     <router-view/>
   </div>
 </template>
 
 
+<script>
+export default {
+  name:'app',
+  mounted(){
+    //设置页面最小高度
+    document.getElementById('app').style.minHeight = window.innerHeight + 'px';
+  }
+}
+</script>
 
 
 <style lang="less">

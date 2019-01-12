@@ -21,7 +21,6 @@ export default {
   },
   methods: {},
   mounted() {
-    document.getElementById("app").style.minHeight = window.innerHeight + "px";
     this.$refs.footer.footerItem[3].isActive = true;
   }
 };
