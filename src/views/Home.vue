@@ -1,5 +1,6 @@
 <template>
   <div class="home" id="home">
+    <HeadComponent />
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
 
     <!-- <HelloWorld :msg = msg /> -->
@@ -14,6 +15,7 @@
     <FooterComponent ref="footer" :obj = selectPage />
     <!-- footer组件 E -->
 
+    
   </div>
 </template>
 
@@ -21,22 +23,27 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import FooterComponent from '@/components/Footer-component.vue'
+import HeadComponent from '@/components/Head-component.vue'
 
 export default {
   name: 'home',
   components: {
     HelloWorld,
-    FooterComponent
+    FooterComponent,
+    HeadComponent
   },
   data(){
     return {
         msg:'233',
         selectPage:'one'
+        
     }
   },
   mounted(){
     document.getElementById('home').style.minHeight = window.innerHeight + 'px';
     this.$refs.footer.footerItem[0].isActive = true;
+    
+    console.log(process.env.NODE_ENV)
   }
 }
 </script>
