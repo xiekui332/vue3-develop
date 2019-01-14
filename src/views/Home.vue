@@ -25,6 +25,8 @@ import HelloWorld from '@/components/HelloWorld.vue'
 import FooterComponent from '@/components/Footer-component.vue'
 import HeadComponent from '@/components/Head-component.vue'
 
+import {getCaeList} from '../service/api'
+
 export default {
   name: 'home',
   components: {
@@ -43,7 +45,18 @@ export default {
     document.getElementById('home').style.minHeight = window.innerHeight + 'px';
     this.$refs.footer.footerItem[0].isActive = true;
     
-    console.log(process.env.NODE_ENV)
+    this.init();
+    
+  },
+  methods:{
+    //获取占卜列表
+    init(){
+        let params = { hasHot:true, hasTop:true }
+
+        getCaeList(params).then(res => {
+          console.log(res)
+        })
+      }
   }
 }
 </script>
@@ -51,17 +64,15 @@ export default {
 
 
 <style lang="less" scoped>
-
-.home{
+.home {
   width: 100%;
-  background: #F9F3ED!important;
+  background: #f9f3ed !important;
   overflow: hidden;
-  .page_container{
+  .page_container {
     width: 7rem;
     height: 7.4rem;
-    margin: .68rem auto 0; 
+    margin: 0.68rem auto 0;
   }
 }
-
 </style>
 
