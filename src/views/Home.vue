@@ -52,7 +52,7 @@ export default {
     //获取占卜列表
     init(){
         let params = { hasHot:true, hasTop:true }
-
+      
         getCaeList(params).then(res => {
           console.log(res)
         })

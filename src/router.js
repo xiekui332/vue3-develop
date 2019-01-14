@@ -27,17 +27,26 @@ const router =  new Router({
     {
       path: '/masterClass',
       name: 'masterClass',
-      component: () => import('./views/MasterClass.vue')
+      component: () => import('./views/MasterClass.vue'),
+      meta:{
+        title:'大师讲堂'
+      }
     },
     {
       path: '/prayForBlessing',
       name: 'prayForBlessing',
-      component: () => import('./views/PrayForBlessing.vue')
+      component: () => import('./views/PrayForBlessing.vue'),
+      meta:{
+        title:'祈福许愿'
+      }
     },
     {
       path: '/personalCenter',
       name: 'personalCenter',
-      component: () => import('./views/PersonalCenter.vue')
+      component: () => import('./views/PersonalCenter.vue'),
+      meta:{
+        title:'个人中心'
+      }
     }
   ],
 
