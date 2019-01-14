@@ -4,14 +4,17 @@ import Home from './views/Home.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router =  new Router({
   mode: '',
   base: process.env.BASE_URL, 
   routes: [
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta:{
+        title:'首页'
+      }
     },
     {
       path: '/about',
@@ -36,5 +39,19 @@ export default new Router({
       name: 'personalCenter',
       component: () => import('./views/PersonalCenter.vue')
     }
-  ]
+  ],
+
 })
+
+
+//动态修改项目标题
+router.beforeEach(function(to,from,next){
+    if(to.meta.title){
+        document.title = to.meta.title
+    }else{
+        document.title = 'vue'
+    }
+    next()
+})
+
+export default router;
