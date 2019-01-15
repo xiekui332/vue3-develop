@@ -15,6 +15,8 @@ export default {
   mounted(){
     //设置页面最小高度
     document.getElementById('app').style.minHeight = window.innerHeight + 'px';
+
+    
   }
 }
 </script>

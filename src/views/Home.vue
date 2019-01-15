@@ -24,6 +24,7 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 import FooterComponent from '@/components/Footer-component.vue'
 import HeadComponent from '@/components/Head-component.vue'
+import store from '@/store.js'
 
 import {getCaeList} from '../service/api'
 
@@ -36,9 +37,8 @@ export default {
   },
   data(){
     return {
-        msg:'233',
+        userInfo:store.state.userInfo,
         selectPage:'one'
-        
     }
   },
   mounted(){
@@ -47,15 +47,24 @@ export default {
     
     this.init();
     
+
   },
   methods:{
     //获取占卜列表
     init(){
         let params = { hasHot:true, hasTop:true }
+        let userInfo = {
+          name:'xiaocai',
+          age:18
+        }
       
         getCaeList(params).then(res => {
           console.log(res)
-        })
+        });
+
+         //提交用户信息动作
+        store.dispatch('commitUserInfo',userInfo)
+        // console.log(store)
       }
   }
 }
