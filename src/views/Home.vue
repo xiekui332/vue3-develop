@@ -52,7 +52,7 @@ export default {
   methods:{
     //获取占卜列表
     init(){
-        let params = { hasHot:true, hasTop:true }
+        let params = { hasHot:true }
         let userInfo = {
           name:'xiaocai',
           age:18
@@ -64,6 +64,9 @@ export default {
 
          //提交用户信息动作
         store.dispatch('commitUserInfo',userInfo)
+
+        //清除store中的信息
+        // store.dispatch('commitClearInfo',null)
         // console.log(store)
       }
   }
