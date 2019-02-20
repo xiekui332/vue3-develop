@@ -1,6 +1,6 @@
 <template>
     <div class="footer-component">
-        <div class="footer_item" v-for="item,index in footerItem" :key="index">
+        <div class="footer_item" v-for="item,index in footerItem" :key="index"> 
             <div class="footer_item_box" @click="toDetailPage(item.toDetailPageUrl)">
                 <img :src="item.img" alt="图片">
                 <p :class="{p_active:item.isActive}">{{item.title}}</p>
